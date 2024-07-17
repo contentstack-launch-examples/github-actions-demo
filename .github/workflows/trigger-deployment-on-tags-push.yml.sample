@@ -1,0 +1,18 @@
+name: Launch Deployment on Content Change (Template)
+
+on:
+  push:
+    tags:
+      - 'content/*'  # Triggers on any tag starting with "content/" (Change as needed)
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Launch (**Please configure!**)
+        run: |
+          # Replace the following YOUR_DEPLOY_HOOK_URL placeholder with actual values
+          curl -X POST https://<YOUR_DEPLOY_HOOK_URL>?commit=${{ github.sha }}
+
+          # Add any additional steps required for your deployment process (e.g., build)
