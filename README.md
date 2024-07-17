@@ -4,7 +4,7 @@ This repository showcases a collection of GitHub Actions designed to streamline 
 
 ### Currently Available Actions:
 
-- [Trigger Launch Deployments based on tags](https://github.com/contentstack-launch-examples/github-actions-demo/.github/workflows/trigger-deployment-on-tags-push.yml.sample) - This action automates deployments to your Launch environment whenever you create a new tag in your Git repository.
+- [Trigger Launch Deployments based on tags](https://github.com/contentstack-launch-examples/github-actions-demo/blob/main/.github/workflows/trigger-deployment-on-tags-push.yml.sample) - This action automates deployments to your Launch environment whenever you create a new tag in your Git repository.
 
 
 ### Support:
