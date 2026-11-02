@@ -1,5 +1,4 @@
 const path = require("path");
-const eleventyImage = require("@11ty/eleventy-img");
 
 function relativeToInputPath(inputPath, relativeFilePath) {
 	let split = inputPath.split("/");
@@ -24,6 +23,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addAsyncShortcode("image", async function imageShortcode(src, alt, widths, sizes) {
 		// Full list of formats here: https://www.11ty.dev/docs/plugins/image/#output-formats
 		// Warning: Avif can be resource-intensive so take care!
+		// @11ty/eleventy-img v7 is ESM-only, so load it with a dynamic import from this CommonJS config.
+		const { default: eleventyImage } = await import("@11ty/eleventy-img");
+
 		let formats = ["avif", "webp", "auto"];
 		let input;
 		if(isFullUrl(src)) {
